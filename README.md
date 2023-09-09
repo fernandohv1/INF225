@@ -3,12 +3,12 @@
 
 # Grupo x
 
-Este es el repositorio del *Grupo X*, cuyos integrantes son:
+Este es el repositorio del *Grupo 01*, cuyos integrantes son:
 
-* Integrante 1 - Rol
-* Integrante 2 - Rol
-* Integrante 3 - Rol
-* **Tutor**: Nombre Tutor
+* Jan Jorquera - Rol: 202104567-8
+* Matías Villaverde - Rol:
+* Nicolás Schiaffino - Rol:
+* **Tutor**: Alexis Henríquez.
 
 ## Wiki
 
@@ -20,7 +20,7 @@ Puede acceder a la Wiki mediante el siguiente [enlace](https://gitlab.inf.utfsm.
 
 > Reemplazar con los enlaces correspondientes
 
-* [Video presentación cliente](https://www.youtube.com)
+* [Video presentación cliente]([https://www.youtube.com](https://www.youtube.com/watch?v=8-77skNr9HE))
 * [Video presentación avance 1](https://www.youtube.com/)
 * Etc ...
 
