@@ -7,7 +7,7 @@ Este es el repositorio del *Grupo 01*, cuyos integrantes son:
 
 * Jan Jorquera - Rol: 202104567-8
 * Matías Villaverde - Rol:
-* Nicolás Schiaffino - Rol:
+* Nicolás Schiaffino - Rol: 202111576-5
 * **Tutor**: Tabata Ahumada.
 
 ## Wiki
