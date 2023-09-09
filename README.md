@@ -1,8 +1,7 @@
 # INF236-2023-2-PAR201-GRUPO-01
 > Notar que **X** corresponde al número del grupo asignado.
 
-# Grupo x
-
+# Grupo 01
 Este es el repositorio del *Grupo 01*, cuyos integrantes son:
 
 * Jan Jorquera - Rol: 202104567-8
