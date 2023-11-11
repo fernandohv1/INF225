@@ -64,9 +64,9 @@ function Registro() {
           <label>Rut</label>
           <input type="text" name="rut" onChange={(e) => handleBusquedaChange('rut', e.target.value)} value={busqueda.rut}/>
           <label>Fecha</label>
-          <input type="text" name="fecha" onChange={(e) => handleBusquedaChange('fecha', e.target.value)} value={busqueda.fecha} />
+          <input type="date" name="fecha" onChange={(e) => handleBusquedaChange('fecha', e.target.value)} value={busqueda.fecha} />
           <label>Hora</label>
-          <input type="text" name="hora" onChange={(e) => handleBusquedaChange('hora', e.target.value)} value={busqueda.hora} />
+          <input type="time" name="hora" onChange={(e) => handleBusquedaChange('hora', e.target.value)} value={busqueda.hora} />
           <button type="submit">Buscar</button>
         </div>
       </form>
