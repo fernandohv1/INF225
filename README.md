@@ -21,7 +21,7 @@ Puede acceder a la Wiki mediante el siguiente [enlace](https://gitlab.inf.utfsm.
 
 * [Video presentación cliente](https://www.youtube.com/watch?v=8-77skNr9HE)
 * [Video presentación avance 1](https://youtu.be/NQQ-IRNuduo)
-* Etc ...
+* [Video presentación entrega 6 y 7](https://youtu.be/e6HoZtsaeAI)
 
 ## Aspectos técnicos relevantes
 
