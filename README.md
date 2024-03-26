@@ -26,3 +26,17 @@ Puede acceder a la Wiki mediante el siguiente [enlace](https://gitlab.inf.utfsm.
 ## Aspectos técnicos relevantes
 
 _Todo aspecto relevante cuando para poder usar el proyecto o consideraciones del proyecto base a ser entregado_
+
+
+
+# INF225-2024-1-PAR200-GRUPO-12
+
+# Grupo 12
+Este es el repositorio del *Grupo 12*, cuyos integrantes son:
+
+* Jan Jorquera - Rol: 202104567-8
+* Matías Villaverde - Rol:202173618-2
+* Nicolás Schiaffino - Rol: 202111576-5
+* Fernando Herrera - Rol: 202173559-3
+* **Tutor**: Sebastián Cifuentes.
+
