@@ -1,3 +1,6 @@
+Este proyecto consiste en un sistema de gestión de citas para un Hospital público de la ciudad de Santiago, el cual está siendo construido con el objetivo de automatizar el sistema reservas de citas de dicho centro de salud, garantizando orden, legibilidad, fácil y veloz acceso, y permitiendo la reserva, cancelación, y evitando sobre escritura de citas previamente asignadas. Corresponde a la continuación del proyecto desarrollado en Análisis y Diseño de Software por Jan Jorquera, Matías Villaverde y Nicolás Schiaffino, cuyo respaldo se encuentra en este repositorio.
+
+
 # INF236-2023-2-PAR201-GRUPO-01
 > Notar que **X** corresponde al número del grupo asignado.
 
