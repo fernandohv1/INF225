@@ -15,7 +15,6 @@ Este es el repositorio del *Grupo 01*, cuyos integrantes son:
 ## Wiki
 
 > Obtener enlace desde el home de la wiki del repo.
-
 Puede acceder a la Wiki mediante el siguiente [enlace](https://gitlab.inf.utfsm.cl/)
 
 ## Videos
