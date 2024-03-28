@@ -15,7 +15,7 @@ Este es el repositorio del *Grupo 01*, cuyos integrantes son:
 ## Wiki
 
 > Obtener enlace desde el home de la wiki del repo.
-Puede acceder a la Wiki mediante el siguiente [enlace](https://gitlab.inf.utfsm.cl/)
+Puede acceder a la Wiki mediante el siguiente [enlace](https://github.com/Tabby2109/INF236-2023-2-PAR201-GRUPO-01/wiki)
 
 ## Videos
 
