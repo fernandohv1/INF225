@@ -43,7 +43,7 @@ Este es el repositorio del *Grupo 12*, cuyos integrantes son:
 Para ejecutar este proyecto se debe hacer lo siguiente:
 
 * Abrir 2 terminales.
-* En la primera terminal dirigirse a la carpeta server (ubicada dentro de la carpeta principal de éste proyecto). Luego escribir node App.js. Ésto iniciará la conexión con la base de datos (backend), es una funcionalidad esencial para poder usar las principales funcionalidades de éste proyecto.
-* En la segunda terminal dirigirse a la carpeta client (ubicada dentro de la carpeta principal de éste proyecto). Luego escribir npm start. Ésto iniciará la aplicación de react (frontend), es una funcionalidad esencial para poder interactuar con la interfaz de nuestra aplicación web.
+* En la primera terminal dirigirse a la carpeta server (ubicada dentro de la carpeta principal de éste proyecto). Luego escribir node App.js. Esto iniciará la conexión con la base de datos (backend), es una funcionalidad esencial para poder usar las principales funcionalidades de éste proyecto.
+* En la segunda terminal dirigirse a la carpeta client (ubicada dentro de la carpeta principal de éste proyecto). Luego escribir npm start. Esto iniciará la aplicación de react (frontend), es una funcionalidad esencial para poder interactuar con la interfaz de nuestra aplicación web.
 * Para finalizar la app, simplemente presionar las teclas ctrl+c en cada una de las 2 terminales.
 
