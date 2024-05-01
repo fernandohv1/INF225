@@ -1,0 +1,31 @@
+.position1 {
+    position: absolute;
+    top: 300px;
+    left: 50px;
+}
+
+.registro-main-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-registro{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.label-container{
+    display:flex;
+    flex-direction: row;
+    gap: 10px;
+    max-width: 40px;
+}
+
+.button{
+    max-width: fit-content;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}

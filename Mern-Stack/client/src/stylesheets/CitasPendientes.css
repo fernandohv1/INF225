@@ -1,0 +1,19 @@
+.main-cita-container{
+    margin: 20px;
+}
+
+.titulo-citas {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.citaspendientes-form{
+    display: flex;
+    gap: 10px;
+}
+
+.button-citas{
+    border-radius: 5px;
+    padding: 4px 8px;
+    cursor: pointer;
+}

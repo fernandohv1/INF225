@@ -1,0 +1,30 @@
+:root {
+    --espaciado: 20px;
+}
+
+.modal-titulo{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.register-container{
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado);
+    padding: 10px;
+}
+
+.form-registro{
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado);
+}
+
+.button-modal{
+    position: relative;
+    margin-left: auto;
+    padding: 5px 10px;
+    max-width: fit-content;
+    border-radius: 5px;
+    cursor: pointer;
+}

@@ -1,0 +1,30 @@
+.cita-container {
+    border: 1px solid #2196F3;
+    padding: 10px;
+    margin: 10px;
+    background-color: #f9f9f9;
+    max-width: 50%;
+}
+
+.agenda-main-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-agenda{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.agenda-button{
+    max-width: fit-content;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.label-text{
+    font-size: 20px;
+}

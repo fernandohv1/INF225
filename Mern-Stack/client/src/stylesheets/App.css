@@ -1,0 +1,79 @@
+.main-container {
+  padding-left: 25px;
+  padding-right: 25px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.position{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  margin-left: 50px;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.img-container {
+  display:flex;
+  max-width: 20%;
+  max-height: 20%;
+}
+
+.imagen {
+  object-fit: cover;
+}
+
+.option-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.texto-centrado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Esto centra verticalmente en la ventana del navegador */
+  gap: 20px;
+}
+
+.render-container {
+  padding-left: 20px;
+}
+
+.corner {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  z-index: 1;
+}
+
+.Titulo{
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+  background-color: lightblue;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.clickeable {
+  cursor: pointer;
+  display: flex;
+  font-weight: 700;
+  font-size: 18px;
+  color: rgb(70,70,240);
+  max-width: fit-content;
+}
+
+.clickeable:active{
+  color: rgb(60,60,180);
+}
