@@ -379,56 +379,54 @@ function Registro({ rut }) {
   return (
     <div className='registro-main-container'>
       <h2>Indique el rut del paciente, fecha y hora de la cita que desea modificar.</h2>
-      <form onSubmit={handleBuscar}>
-        <div className='form-registro'>
-          <div className='label-container'>
-            <label>Rut: </label>
-            <input
-              type="text"
-              name="rut"
-              value={busqueda.rut}
-              onChange={(e) => handleBusquedaChange('rut', e.target.value)}
-            />
-          </div>
-
-          <div className='label-container'>
-            <label>Fecha: </label>
-            <input
-              type="date"
-              name="fecha"
-              value={busqueda.fecha}
-              onChange={(e) => handleBusquedaChange('fecha', e.target.value)}
-            />
-          </div>
-
-          <div className='label-container'>
-            <label>Hora: </label>
-            {/*
-            <input
-              type="time"
-              name="hora"
-              value={busqueda.hora}
-              onChange={(e) => handleBusquedaChange('hora', e.target.value)}
-            />*/}
-
-            <select
-              name="hora"
-              onChange={(e) => handleBusquedaChange('hora', e.target.value)}
-              value={busqueda.hora}
-            >
-              <option value="" disabled>
-                Selecciona una hora
-              </option>
-              {intervalosHora.map((hora) => (
-                <option key={hora} value={hora}>
-                  {hora}
-                </option>
-              ))}
-            </select>
-          </div>
-          
-          <button type="submit" className='button'>Buscar</button>
+      <form onSubmit={handleBuscar} className='form-registro'>
+        <div className='label-container'>
+          <label>Rut: </label>
+          <input
+            type="text"
+            name="rut"
+            value={busqueda.rut}
+            onChange={(e) => handleBusquedaChange('rut', e.target.value)}
+          />
         </div>
+
+        <div className='label-container'>
+          <label>Fecha: </label>
+          <input
+            type="date"
+            name="fecha"
+            value={busqueda.fecha}
+            onChange={(e) => handleBusquedaChange('fecha', e.target.value)}
+          />
+        </div>
+
+        <div className='label-container'>
+          <label>Hora: </label>
+          {/*
+          <input
+            type="time"
+            name="hora"
+            value={busqueda.hora}
+            onChange={(e) => handleBusquedaChange('hora', e.target.value)}
+          />*/}
+
+          <select
+            name="hora"
+            onChange={(e) => handleBusquedaChange('hora', e.target.value)}
+            value={busqueda.hora}
+          >
+            <option value="" disabled>
+              Selecciona una hora
+            </option>
+            {intervalosHora.map((hora) => (
+              <option key={hora} value={hora}>
+                {hora}
+              </option>
+            ))}
+          </select>
+        </div>
+        
+        <button type="submit" className='button'>Buscar</button>
       </form>
 
       <div className="citas-container">

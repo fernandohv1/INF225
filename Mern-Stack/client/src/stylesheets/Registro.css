@@ -13,14 +13,13 @@
 .form-registro{
     display: flex;
     flex-direction: row;
-    gap: 5px;
+    gap: 20px;
 }
 
 .label-container{
     display:flex;
     flex-direction: row;
     gap: 10px;
-    max-width: 40px;
 }
 
 .button{
