@@ -15,7 +15,7 @@ class TestVisualizarCitasEndpoint(unittest.TestCase):
         cls.base_url = "http://localhost:5000/Citas"
         cls.headers = {"Content-Type": "application/json"}
         cls.valid_date_to_search = datetime.strptime("07-06-2024", "%d-%m-%Y").date()
-        cls.invalid_date_to_search = datetime.strptime("01-04-2024", "%d-%m-%Y").date()
+        cls.invalid_date_to_search = datetime.strptime("07-04-2024", "%d-%m-%Y").date()
         cls.valid_citasdia_url_data = f"{cls.base_url}/{cls.valid_date_to_search}"
         cls.invalid_citasdia_url_data = f"{cls.base_url}/{cls.invalid_date_to_search}"
         cls.expected_valid_response = [{

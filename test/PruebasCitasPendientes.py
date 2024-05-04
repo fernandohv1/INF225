@@ -10,7 +10,6 @@ class TestCitasPendientesEndpoint(unittest.TestCase):
     invalid_rut = None
     actual_date = None
 
-
     @classmethod
     def setUpClass(cls):
         cls.actual_date = datetime.now().strftime("%d-%m-%Y")
