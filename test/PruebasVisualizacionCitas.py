@@ -9,7 +9,7 @@ class TestVisualizarCitasEndpoint(unittest.TestCase):
     valid_date_to_search = None
     invalid_date_to_search = None
     expected_valid_response = None
-
+    
     @classmethod
     def setUpClass(cls):
         cls.base_url = "http://localhost:5000/Citas"
