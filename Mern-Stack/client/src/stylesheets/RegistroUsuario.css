@@ -2,29 +2,33 @@
     --espaciado: 20px;
 }
 
-.modal-titulo{
-    font-size: 20px;
-    font-weight: 500;
-}
-
 .register-container{
     display: flex;
     flex-direction: column;
     gap: var(--espaciado);
-    padding: 10px;
 }
 
-.form-registro{
+.form-registrou{
     display: flex;
     flex-direction: column;
     gap: var(--espaciado);
 }
 
-.button-modal{
-    position: relative;
-    margin-left: auto;
-    padding: 5px 10px;
-    max-width: fit-content;
-    border-radius: 5px;
+.btn-registro{
+    border: .5px solid #444;
+    border-radius: 10px;
     cursor: pointer;
+    padding: 7px 3px;
+}
+
+.registrou_field-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.registro_input{
+    border: 1px solid #444;
+    border-radius: 5px;
 }

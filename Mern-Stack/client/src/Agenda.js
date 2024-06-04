@@ -4,13 +4,15 @@ import './stylesheets/Agenda.css';
 function Agenda2() {
   const [selectedDate, setSelectedDate] = useState('');
   const [citasForSelectedDate, setCitasForSelectedDate] = useState([]);
-  
+  const [btnPress, setBtnPress] = useState(false);
+
   const handleDateChange = (e) => {
     setSelectedDate(e.target.value);
   };
 
   const handleSearch = () => {
     if (selectedDate){
+      setBtnPress(true);
       buscarCitasPorFecha(selectedDate);
     } else {
       alert("Selecciona una fecha");
@@ -82,46 +84,51 @@ function Agenda2() {
       </div>
 
       {/* Display citasForSelectedDate */}
-      <div>
-        <h2>Citas reservadas o completadas para el dia seleccionado</h2>
-        {citasForSelectedDate.length === 0 ? (
-          <p>No se encontraron citas</p>
-        ) : (
-            citasForSelectedDate.map((cita) => {
-                // Crear un objeto Date a partir de la cadena de fecha en la cita
-                const fechaCompleta = new Date(cita.fecha);
 
-                // Obtener día, mes y año en formato UTC
-                const dia = fechaCompleta.getUTCDate();
-                const mes = fechaCompleta.getUTCMonth() + 1; // Sumar 1 porque los meses van de 0 a 11
-                const ano = fechaCompleta.getUTCFullYear();
+      {btnPress ? (
+        <div>
+          <h2>Citas reservadas o completadas para el dia seleccionado</h2>
+          {citasForSelectedDate.length === 0 ? (
+            <p>No se encontraron citas</p>
+          ) : (
+              citasForSelectedDate.map((cita) => {
+                  // Crear un objeto Date a partir de la cadena de fecha en la cita
+                  const fechaCompleta = new Date(cita.fecha);
 
-                // Formatear la fecha como "dd-mm-yyyy"
-                const nuevaFecha = `${dia < 10 ? '0' : ''}${dia}-${mes < 10 ? '0' : ''}${mes}-${ano}`;
+                  // Obtener día, mes y año en formato UTC
+                  const dia = fechaCompleta.getUTCDate();
+                  const mes = fechaCompleta.getUTCMonth() + 1; // Sumar 1 porque los meses van de 0 a 11
+                  const ano = fechaCompleta.getUTCFullYear();
 
-                // Obtener la hora y los minutos en formato UTC
-                const hora = fechaCompleta.getUTCHours();
-                const minutos = fechaCompleta.getUTCMinutes();
+                  // Formatear la fecha como "dd-mm-yyyy"
+                  const nuevaFecha = `${dia < 10 ? '0' : ''}${dia}-${mes < 10 ? '0' : ''}${mes}-${ano}`;
 
-                // Formatear la hora como "hh:mm"
-                const nuevaHora = `${hora < 10 ? '0' : ''}${hora}:${minutos < 10 ? '0' : ''}${minutos}`;
+                  // Obtener la hora y los minutos en formato UTC
+                  const hora = fechaCompleta.getUTCHours();
+                  const minutos = fechaCompleta.getUTCMinutes();
 
-                return (
-                    <div key={cita._id} className="cita-container">
-                        <p>Fecha: {nuevaFecha}</p>
-                        <p>Rut Paciente: {cita.rutp}</p>
-                        <p>Doctor: {obtenerNombreMedico(cita.idmedico)}</p>
-                        <p>Hora: {nuevaHora}</p>
-                        <p>Tipo examen: {obtenerNombreExamen(cita.idex)}</p>
-                        <p>Observaciones: {cita.motivo}</p>
-                        <p>Equipo: {cita.equipo}</p>
-                        <p>Rut de quien añadió o modifico la cita: {cita.rutm}</p>
-                        <br />
-                    </div>
-                );
-            })
-        )}
-      </div>
+                  // Formatear la hora como "hh:mm"
+                  const nuevaHora = `${hora < 10 ? '0' : ''}${hora}:${minutos < 10 ? '0' : ''}${minutos}`;
+
+                  return (
+                      <div key={cita._id} className="cita-container">
+                          <p>Fecha: {nuevaFecha}</p>
+                          <p>Rut Paciente: {cita.rutp}</p>
+                          <p>Doctor: {obtenerNombreMedico(cita.idmedico)}</p>
+                          <p>Hora: {nuevaHora}</p>
+                          <p>Tipo examen: {obtenerNombreExamen(cita.idex)}</p>
+                          <p>Observaciones: {cita.motivo}</p>
+                          <p>Equipo: {cita.equipo}</p>
+                          <p>Rut de quien añadió o modifico la cita: {cita.rutm}</p>
+                          <br />
+                      </div>
+                  );
+              })
+          )}
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }

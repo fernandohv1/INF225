@@ -57,38 +57,38 @@ function RegistroUsuario ({ rut, setFlag }) {
   return (
     <div className='register-container'>
       <div> Rut del paciente: {rut} </div>
-      <form className='form-registro'>
-        <div>
+      <form className='form-registrou'>
+        <div className='registrou_field-container'>
           <label>Nombre paciente: </label>
-          <input type="text" onChange={(e) => {setNombre(e.target.value)}}></input>
+          <input className='registro_input' type="text" onChange={(e) => {setNombre(e.target.value)}}></input>
         </div>
 
-        <div>
+        <div className='registrou_field-container'>
           <label>Fecha de nacimiento: </label>
-          <input type="date" onChange={(e) => {setFecha(e.target.value)}}></input>
+          <input className='registro_input' type="date" onChange={(e) => {setFecha(e.target.value)}}></input>
         </div>
 
-        <div>
+        <div className='registrou_field-container'>
           <label>Alergias: </label>
-          <input type="text" onChange={(e) => {setAlergia(e.target.value)}}></input>
+          <input className='registro_input' type="text" onChange={(e) => {setAlergia(e.target.value)}}></input>
         </div>
 
-        <div>
+        <div className='registrou_field-container'>
           <label>Dirección: </label>
-          <input type="text" onChange={(e) => {setDir(e.target.value)}}></input>
+          <input className='registro_input' type="text" onChange={(e) => {setDir(e.target.value)}}></input>
         </div>
 
-        <div>
+        <div className='registrou_field-container'>
           <label>Teléfono: </label>
-          <input type="text" onChange={(e) => {setTel(e.target.value)}}></input>
+          <input className='registro_input' type="text" onChange={(e) => {setTel(e.target.value)}}></input>
         </div>
 
-        <div>
+        <div className='registrou_field-container'>
           <label>Fonasa: </label>
-          <input type="text" onChange={(e) => {setFon(e.target.value)}}></input>
+          <input className='registro_input' type="text" onChange={(e) => {setFon(e.target.value)}}></input>
         </div>
 
-        <button onClick={handleRegister}>Registrar paciente</button>
+        <button onClick={handleRegister} className='btn-registro'>Registrar paciente</button>
       </form>
     </div>
   );

@@ -1,19 +1,79 @@
-.main-cita-container{
-    margin: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: 'Overpass', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.citaspendientes-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.citaspendientes-form input[type="text"] {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.button-citas {
+    background-color:#81bcd4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button-citas:hover {
+    background-color:#70a9bf;
+}
+
+.main-cita-container {
+    margin-top: 20px;
 }
 
 .titulo-citas {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    color:#81bcd4;
 }
 
-.citaspendientes-form{
-    display: flex;
-    gap: 10px;
-}
-
-.button-citas{
+.cita-container {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
     border-radius: 5px;
-    padding: 4px 8px;
-    cursor: pointer;
+    background-color: #f9f9f9;
+}
+
+.cita-container div {
+    margin-bottom: 5px;
+}
+
+.cita-container div:last-child {
+    margin-bottom: 0;
 }

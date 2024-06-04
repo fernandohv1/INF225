@@ -1,6 +1,8 @@
 import './stylesheets/Reserva.css';
 import React, { useState, useEffect } from 'react';
 import RegistroUsuario from './RegistroUsuario';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
 
 function Reserva({ rut }) {
   const [nuevaCita, setNuevaCita] = useState({
@@ -54,6 +56,10 @@ function Reserva({ rut }) {
           setOpcionesEquipo([]);
           break;
       }
+    }
+
+    if (campo === 'paciente'){
+      setDisplayModal(false);
     }
 
     setNuevaCita((prevNuevaCita) => ({ ...prevNuevaCita, [campo]: valorAAlmacenar }));
@@ -159,15 +165,15 @@ function Reserva({ rut }) {
         <form className='form-reserva'>
           <div className='reserva-espaciado'>
             <label className='reserva-espaciado'>Rut del paciente:</label>
-            <input type="text" name="paciente" onChange={(e) => handleNuevaCitaChange('paciente', e.target.value)} value={nuevaCita.paciente}/>
-            <button onClick={handleUser} className='button'>Confirmar paciente</button>
+            <input className='reserva-input' type="text" name="paciente" onChange={(e) => handleNuevaCitaChange('paciente', e.target.value)} value={nuevaCita.paciente}/>
+            <button onClick={handleUser} className='confirm_paciente_button'>Confirmar paciente</button>
           </div>
           
           {userRegister && (
             <>
               <div className='reserva-espaciado'>
                 <label className='reserva-espaciado'>Doctor:</label>
-                <select name="doctor" onChange={(e) => handleNuevaCitaChange('doctor', e.target.value)} value={nuevaCita.doctor}>
+                <select className='reserva-input' name="doctor" onChange={(e) => handleNuevaCitaChange('doctor', e.target.value)} value={nuevaCita.doctor}>
                   <option value="" disabled selected>Selecciona un doctor</option>
                   <option value="1">Dr. JAN DAVID JORQUERA CONTRERAS</option>
                   <option value="2">Dr. MATIAS ISRAEL VILLAVERDE POBLETE</option>
@@ -181,7 +187,7 @@ function Reserva({ rut }) {
 
               <div className='reserva-espaciado'>
                 <label className='reserva-espaciado'>Examen:</label>
-                <select name="examen" onChange={(e) => handleNuevaCitaChange('examen', e.target.value)} value={nuevaCita.examen}>
+                <select className='reserva-input' name="examen" onChange={(e) => handleNuevaCitaChange('examen', e.target.value)} value={nuevaCita.examen}>
                   <option value="" disabled selected>Selecciona un examen</option>
                   <option value="1">Radiografía</option>
                   <option value="2">Ecografía</option>
@@ -192,12 +198,12 @@ function Reserva({ rut }) {
 
               <div className='reserva-espaciado'>
                 <label className='reserva-espaciado'>Fecha:</label>
-                <input type="date" name="fecha" onChange={(e) => handleNuevaCitaChange('fecha', e.target.value)} value={nuevaCita.fecha}/>
+                <input className='reserva-input' type="date" name="fecha" onChange={(e) => handleNuevaCitaChange('fecha', e.target.value)} value={nuevaCita.fecha}/>
               </div>
 
               <div className='reserva-espaciado'>
                 <label>Hora:</label>
-                  <select name="hora" onChange={(e) => handleNuevaCitaChange('hora', e.target.value)} value={nuevaCita.hora}>
+                  <select className='reserva-input' name="hora" onChange={(e) => handleNuevaCitaChange('hora', e.target.value)} value={nuevaCita.hora}>
                     <option value="" disabled selected>
                       Selecciona una hora
                     </option>
@@ -211,7 +217,7 @@ function Reserva({ rut }) {
 
               <div className='reserva-espaciado'>
                 <label>Equipo:</label>
-                <select name="equipo" onChange={(e) => handleNuevaCitaChange('equipo', e.target.value)} value={nuevaCita.equipo}>
+                <select className='reserva-input' name="equipo" onChange={(e) => handleNuevaCitaChange('equipo', e.target.value)} value={nuevaCita.equipo}>
                   <option value="" disabled selected>Seleccione un equipo</option>
                   {opcionesEquipo.map((opcion) => (
                     <option key={opcion} value={opcion}>
@@ -223,7 +229,7 @@ function Reserva({ rut }) {
 
               <div className='reserva-espaciado'>
                 <label className='reserva-espaciado'>Observaciones:</label>
-                <input type="text" name="motivo" onChange={(e) => handleNuevaCitaChange('motivo', e.target.value)} value={nuevaCita.motivo}/>
+                <input className='reserva-input' type="text" name="motivo" onChange={(e) => handleNuevaCitaChange('motivo', e.target.value)} value={nuevaCita.motivo}/>
               </div>
 
               <button type="button" className="button-form-reserva" onClick={verificarExistenciaCita}>Crear Nueva Cita</button>
@@ -233,9 +239,11 @@ function Reserva({ rut }) {
       </div>
       {displayModal && (
         <div className='modal'>
-          <button className='button-modal' onClick={() => setDisplayModal(false)}>X</button>
-          <div className='modal-titulo'>Crear paciente</div>
-          <RegistroUsuario rut={nuevaCita.paciente} setFlag={setFlag}/>
+          <FontAwesomeIcon className='reserva_close-txt' icon={faCircleXmark} onClick={() => setDisplayModal(false)} />
+          <div className='reserva_modal-block'>
+            <div className='modal-titulo'>Crear paciente</div>
+            <RegistroUsuario rut={nuevaCita.paciente} setFlag={setFlag}/>
+          </div>
         </div>
       )}
     </div>

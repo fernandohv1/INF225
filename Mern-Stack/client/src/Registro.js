@@ -251,7 +251,7 @@ function Registro({ rut }) {
   const [citasFiltradas, setCitasFiltradas] = useState(null);
   const [intervalosHora, setIntervalos] = useState(['08:30', '09:00', '09:30', '10:00','10:30','11:00','11:30','12:00', '12:30',
   '14:00', '14:30','15:00','15:30', '16:00']);
-
+  const [btnPress, setBtnPress] = useState(false);
   const [busqueda, setBusqueda] = useState({
     rut: '',
     fecha: '',
@@ -343,6 +343,7 @@ function Registro({ rut }) {
     e.preventDefault();
   
     try {
+      setBtnPress(true);
       if ( 
         busqueda.fecha &&
         busqueda.hora &&
@@ -430,13 +431,17 @@ function Registro({ rut }) {
       </form>
 
       <div className="citas-container">
-        {citasFiltradas !== null && citasFiltradas.length > 0 ? (
+      {btnPress === true ? (
+        citasFiltradas !== null && citasFiltradas.length > 0 ? (
           citasFiltradas.map((cita) => (
-            <CitaMedica key={cita._id} cita={cita} onModificar={modificarCita} rut={rut} busqueda={busqueda}/>
+            <CitaMedica key={cita._id} cita={cita} onModificar={modificarCita} rut={rut} busqueda={busqueda} />
           ))
         ) : (
           <p>No se encontraron citas.</p>
-        )}
+        )
+      ) : (
+        <></>
+      )}
       </div>
     </div>
   );

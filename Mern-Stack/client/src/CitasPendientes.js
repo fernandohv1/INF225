@@ -1,31 +1,31 @@
 import React, { useState } from 'react';
 import "./stylesheets/CitasPendientes.css";
 
-function CitasPendientes () {
+function CitasPendientes() {
   const [rutIngresado, setRutIngresado] = useState("");
   const [citasFiltradas, setCitasFiltradas] = useState(null);
   const [rutPaciente, setRutPaciente] = useState("");
 
   const handleRutChange = e => {
-    setRutIngresado(e.target.value)
-  }
+    setRutIngresado(e.target.value);
+  };
 
   const getExamen = id => {
     switch (id) {
-      case 1: // Radiografía
+      case 1:
         return "Radiografía";
-      case 2: // Ecografía
+      case 2:
         return "Ecografía";
-      case 3: // Scanner
+      case 3:
         return "Scanner";
-      case 4: // Resonancia Magnética
+      case 4:
         return "Resonancia Magnética";
       default:
         return "";
     }
-  }
+  };
 
-  const handleSearch = async e =>{
+  const handleSearch = async e => {
     e.preventDefault();
 
     if (rutIngresado !== "") {
@@ -43,29 +43,30 @@ function CitasPendientes () {
         setCitasFiltradas(data);
 
       } catch (e) {
-        console.error(e)
+        console.error(e);
       }
     }
-  }
+  };
 
   return (
-    <div>
-      <h1>Ingrese el rut del paciente</h1>
+    <div className="container">
+      <h1>Ingrese el RUT del Paciente</h1>
       <form className='citaspendientes-form'>
-        <input type="text" onChange={handleRutChange}/>
-        <input type="button" onClick={handleSearch} className="button-citas" value="Buscar"/>
+        <input type="text" onChange={handleRutChange} placeholder="RUT" />
+        <input type="button" onClick={handleSearch} className="button-citas" value="Buscar" />
       </form>
       {
         citasFiltradas != null ? (
           <div className='main-cita-container'>
             <div className="titulo-citas">Citas de {rutPaciente}</div>
-            { citasFiltradas.map( cita => {
+            {citasFiltradas.map(cita => {
+
               // Crear un objeto Date a partir de la cadena de fecha en la cita
               const fechaCompleta = new Date(cita.fecha);
 
               // Obtener día, mes y año en formato UTC
               const dia = fechaCompleta.getUTCDate();
-              const mes = fechaCompleta.getUTCMonth() + 1; // Sumar 1 porque los meses van de 0 a 11
+              const mes = fechaCompleta.getUTCMonth() + 1;
               const ano = fechaCompleta.getUTCFullYear();
 
               // Formatear la fecha como "dd-mm-yyyy"
@@ -74,21 +75,20 @@ function CitasPendientes () {
               // Obtener la hora y los minutos en formato UTC
               const hora = fechaCompleta.getUTCHours();
               const minutos = fechaCompleta.getUTCMinutes();
-
+              
               // Formatear la hora como "hh:mm"
               const nuevaHora = `${hora < 10 ? '0' : ''}${hora}:${minutos < 10 ? '0' : ''}${minutos}`;
 
               return (
                 <div className="cita-container">
-                  <div>Examen: {getExamen(cita.idex)}</div>
-                  <div>Motivo: {cita.motivo}</div>
-                  <div>Fecha: {nuevaFecha}</div>
-                  <div>Hora: {nuevaHora}</div>
-                  <div>Id Equipo: {cita.equipo}</div>
+                  <div><strong>Examen:</strong> {getExamen(cita.idex)}</div>
+                  <div><strong>Motivo:</strong> {cita.motivo}</div>
+                  <div><strong>Fecha:</strong> {nuevaFecha}</div>
+                  <div><strong>Hora:</strong> {nuevaHora}</div>
+                  <div><strong>Id Equipo:</strong> {cita.equipo}</div>
                 </div>
-              )
-              }) 
-            }
+              );
+            })}
           </div>
         ) : (
           <></>

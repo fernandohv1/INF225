@@ -230,7 +230,7 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className='app_main-container'>
         {!isLoged ? (
           <div>
             <div>
@@ -293,7 +293,7 @@ function App() {
         ) : (
           <div>
             <div className="corner">
-              <button onClick={handleLogoutClick}>Cerrar sesión</button>
+              <button className="corner_button" onClick={handleLogoutClick}>Cerrar sesión</button>
             </div>
 
             <div className="Titulo">
