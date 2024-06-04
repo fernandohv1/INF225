@@ -26,6 +26,7 @@ Puede acceder a la Wiki mediante el siguiente [enlace](https://github.com/Tabby2
 * [Video presentación cliente](https://www.youtube.com/watch?v=8-77skNr9HE)
 * [Video presentación avance 1](https://youtu.be/NQQ-IRNuduo)
 * [Video presentación entrega 6 y 7](https://youtu.be/e6HoZtsaeAI)
+* [Video Hito4, evaluacion del proyecto](https://youtu.be/g3yWB4qwfu0)
 
 # INF225-2024-1-PAR200-GRUPO-12
 
