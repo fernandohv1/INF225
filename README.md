@@ -38,7 +38,7 @@ Este es el repositorio del *Grupo 12*, cuyos integrantes son:
 * Fernando Herrera - Rol: 202173559-3
 * **Tutor**: Sebastián Cifuentes.
 
-  ##Videos Ingenieria de software
+##Videos Ingenieria de software
 * [Video Hito4, evaluacion del proyecto](https://youtu.be/g3yWB4qwfu0)
 
 # Ejecución del proyecto.
