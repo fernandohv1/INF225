@@ -44,24 +44,23 @@ const CitaMedica = ({ cita, onModificar, rut, busqueda }) => {
           valorAAlmacenar = parseInt(valor, 10);
   
           switch (valor) {
-              case '1': // Radiografía
-                  setOpcionesHora(['08:30', '09:00', '09:30', '10:00','10:30','11:00','11:30','12:00', '12:30',
-                    '14:00', '14:30','15:00','15:30', '16:00']);
-                  setOpcionesEquipo([1, 2, 3, 4, 5, 6, 7]);
-                  break;
-              case '2': // Ecografía
-                  setOpcionesHora(['08:30', '09:00','09:30', '10:00','10:30','11:00','11:30','12:00', '12:30',
-                  '14:00', '14:30','15:00','15:30', '16:00']);
-                  setOpcionesEquipo([1, 2, 3, 4, 5]);
-                  break;
-              case '3': // Resonancia Magnética
-                  setOpcionesHora(['08:30', '10:00', '11:30', '14:00']);
-                  setOpcionesEquipo([1, 2]);
-                  break;
-              case '4': // Scanner
-                  setOpcionesHora(['08:30','9:30','10:30', '11:30', '14:00']);
-                  setOpcionesEquipo([1, 2, 3]);
-                  break;
+            case '1': // Radiografía
+              setOpcionesHora(['08:30', '08:45', '09:00', '09:15', '09:30', '09:45', '10:00', '10:15', '10:30', '10:45', '11:00', '11:15', '11:30', '11:45', '12:00', '12:15', '12:30', '12:45', '14:00', '14:15', '14:30', '14:45', '15:00', '15:15', '15:30', '15:45', '16:00']);
+              setOpcionesEquipo([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+              break;
+            case '2': // Ecografía
+              setOpcionesHora(['08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '14:00', '14:30', '15:00', '15:30', '16:00']);
+              setOpcionesEquipo([1, 2, 3, 4, 5]);
+              break;
+            case '3': // Resonancia Magnética
+              setOpcionesHora(['08:30', '09:30', '10:30', '11:30', '14:00', '15:00', '16:00']);
+              setOpcionesEquipo([1, 2, 3]);
+              break;
+            case '4': // Scanner
+              setOpcionesHora(['08:30', '09:15', '10:00', '10:45', '11:30', '14:00', '14:45', '15:30', '16:00']);
+              setOpcionesEquipo([1, 2, 3]);
+              break;
+          
               default:
                   setOpcionesHora([]);
                   setOpcionesEquipo([]);
@@ -249,8 +248,7 @@ const CitaMedica = ({ cita, onModificar, rut, busqueda }) => {
 
 function Registro({ rut }) {
   const [citasFiltradas, setCitasFiltradas] = useState(null);
-  const [intervalosHora, setIntervalos] = useState(['08:30', '09:00', '09:30', '10:00','10:30','11:00','11:30','12:00', '12:30',
-  '14:00', '14:30','15:00','15:30', '16:00']);
+  const [intervalosHora, setIntervalos] = useState(['08:30', '08:45', '09:00', '09:15', '09:30', '09:45', '10:00', '10:15', '10:30', '10:45', '11:00', '11:15', '11:30', '11:45', '12:00', '12:15', '12:30', '12:45', '14:00', '14:15', '14:30', '14:45', '15:00', '15:15', '15:30', '15:45', '16:00']);
   const [btnPress, setBtnPress] = useState(false);
   const [busqueda, setBusqueda] = useState({
     rut: '',
