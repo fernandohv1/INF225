@@ -2,7 +2,7 @@ import hospital from './img/hospital.jpg';
 import './stylesheets/normalize.css';
 import './stylesheets/App.css';
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Link, Route, Routes} from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
 
 import Reserva from './Reserva';
 import Registro from './Registro';
@@ -10,7 +10,6 @@ import Agenda from './Agenda';
 import CitasPendientes from './CitasPendientes';
 
 function App() {
-  
   const [showLoginForm, setShowLoginForm] = useState(false);
   const [showRegistroForm, setShowRegistroForm] = useState(false);
   const [isLoged, setisLoged] = useState(false);
@@ -69,7 +68,7 @@ function App() {
     const User = {
       rut: formularioL.rut,
       clave: formularioL.clave
-    }
+    };
 
     const response = await fetch(`http://localhost:5000/Usuario/${User.rut}/${User.clave}`, {
       method: 'GET',
@@ -98,7 +97,7 @@ function App() {
       const response = await fetch(`http://localhost:5000/Persona/${formulario.rut}`, {
         method: 'GET',
         headers: {
-          'Content-Type': 'application/json', 
+          'Content-Type': 'application/json',
         }
       });
 
@@ -110,7 +109,7 @@ function App() {
       if (!data.existe) {
         handleRegistro();
       } else {
-        alert("No puedes volver a crear un usuario que ya ha sido creado")
+        alert("No puedes volver a crear un usuario que ya ha sido creado");
       }
     } catch (error) {
       console.error('Error al verificar existencia del Rut:', error.message);
@@ -132,7 +131,7 @@ function App() {
     const nuevoUsuario = {
       rut: formulario.rut,
       clave: formulario.clave
-    }
+    };
 
     fetch("http://localhost:5000/Persona/crear", {
       method: "POST",
@@ -141,15 +140,15 @@ function App() {
       },
       body: JSON.stringify(nuevaPersona),
     })
-      .then((response)=>{
-        if (!response.ok){
+      .then((response) => {
+        if (!response.ok) {
           throw new Error("No se pudo completar la solicitud");
         }
       })
-      .catch((error)=>{
+      .catch((error) => {
         console.error(error);
       });
-  
+
     fetch("http://localhost:5000/Usuario/crear", {
       method: "POST",
       headers: {
@@ -157,8 +156,8 @@ function App() {
       },
       body: JSON.stringify(nuevoUsuario),
     })
-      .then((response)=>{
-        if (!response.ok){
+      .then((response) => {
+        if (!response.ok) {
           throw new Error("No se pudo completar la solicitud");
         } else {
           alert('Registro exitoso');
@@ -166,7 +165,7 @@ function App() {
           setisLoged(true);
         }
       })
-      .catch((error)=>{
+      .catch((error) => {
         console.error(error);
       });
   };
@@ -189,7 +188,7 @@ function App() {
     });
   };
 
-  const renderElemento = ()=> {
+  const renderElemento = () => {
     if (reservaRenderizado) {
       return (
         <Reserva rut={formularioL.rut || formulario.rut} />
@@ -209,24 +208,24 @@ function App() {
     } else {
       return null;
     }
-  }
+  };
 
   const handleDisplay = text => {
-    setCitaRenderizada(false)
-    setAgendaRenderizada(false)
-    setRegistroRenderizado(false)
-    setReservaRenderizado(false)
+    setCitaRenderizada(false);
+    setAgendaRenderizada(false);
+    setRegistroRenderizado(false);
+    setReservaRenderizado(false);
 
     if (text === "Reservar hora") {
-      setReservaRenderizado(true)
+      setReservaRenderizado(true);
     } else if (text === "Modificar horas") {
-      setRegistroRenderizado(true)
+      setRegistroRenderizado(true);
     } else if (text === "Agenda") {
-      setAgendaRenderizada(true)
+      setAgendaRenderizada(true);
     } else if (text === "Ver citas pendientes por rut") {
-      setCitaRenderizada(true)
+      setCitaRenderizada(true);
     }
-  }
+  };
 
   return (
     <>
@@ -235,10 +234,11 @@ function App() {
           <div>
             <div>
               {showButtons && (
-              <div className="texto-centrado">
-                <button onClick={handleLoginClick}>Login como Personal</button>
-                <button onClick={handleRegistroClick}>Registro como Personal</button>
-              </div>)}
+                <div className="texto-centrado">
+                  <button onClick={handleLoginClick}>Login como Personal</button>
+                  <button onClick={handleRegistroClick}>Registro como Personal</button>
+                </div>
+              )}
 
               {showLoginForm && (
                 <div className="position">
@@ -247,11 +247,11 @@ function App() {
                     <form onSubmit={handleLogin}>
                       <div className="form-group">
                         <label>Rut:</label>
-                        <input type="text" name="rut" onChange={handleChangeL} value={formularioL.rut}/>
+                        <input type="text" name="rut" onChange={handleChangeL} value={formularioL.rut} />
                       </div>
                       <div className="form-group">
                         <label>Contraseña:</label>
-                        <input type="password" name="clave" onChange={handleChangeL} value={formularioL.clave}/>
+                        <input type="password" name="clave" onChange={handleChangeL} value={formularioL.clave} />
                       </div>
                       <button type="submit">Iniciar Sesión</button>
                     </form>
@@ -279,7 +279,7 @@ function App() {
                       </div>
                       <div className="form-group">
                         <label>Clave:</label>
-                        <input type="password" name="clave" onChange={handleChange} value={formulario.clave}/>
+                        <input type="password" name="clave" onChange={handleChange} value={formulario.clave} />
                       </div>
                       <button type="submit">Registrarse</button>
                     </form>
@@ -287,7 +287,6 @@ function App() {
                   </div>
                 </div>
               )}
-
             </div>
           </div>
         ) : (
@@ -305,10 +304,10 @@ function App() {
               <div className="text-container">
                 <h1>Indique lo que desee hacer</h1>
                 <div className="option-container">
-                  <div className="clickeable" onClick={() => handleDisplay("Reservar hora")}>Reservar hora</div>
-                  <div className="clickeable" onClick={() => handleDisplay("Modificar horas")}>Modificar horas</div>
-                  <div className="clickeable" onClick={() => handleDisplay("Agenda")}>Visualizar horas</div>
-                  <div className="clickeable" onClick={() => handleDisplay("Ver citas pendientes por rut")}>Ver citas pendientes por rut</div>
+                  <button className="clickeable" onClick={() => handleDisplay("Reservar hora")}>Reservar hora</button>
+                  <button className="clickeable" onClick={() => handleDisplay("Modificar horas")}>Modificar horas</button>
+                  <button className="clickeable" onClick={() => handleDisplay("Agenda")}>Visualizar horas</button>
+                  <button className="clickeable" onClick={() => handleDisplay("Ver citas pendientes por rut")}>Ver citas pendientes por rut</button>
                 </div>
               </div>
 
@@ -321,11 +320,8 @@ function App() {
         )}
 
         <div className='render-container'>
-          {
-            renderElemento()
-          }
+          {renderElemento()}
         </div>
-      
       </div>
     </>
   );
