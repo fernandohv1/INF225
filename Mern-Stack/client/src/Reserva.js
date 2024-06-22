@@ -1,5 +1,6 @@
 import './stylesheets/Reserva.css';
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types'; // Importación añadida
 import RegistroUsuario from './RegistroUsuario';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
@@ -248,5 +249,9 @@ function Reserva({ rut }) {
     </div>
   );
 }
+
+Reserva.propTypes = { // Definición añadida
+  rut: PropTypes.string.isRequired,
+};
 
 export default Reserva;
